@@ -56,7 +56,7 @@ try:
   if dic.lower() == 'y':
     _file = open(name, 'w')
 
-  tic = time.clock()
+  tic = time.time()
 
   for length in range(1, maxlen):
     to_attempt = product(chars, repeat=length)
@@ -79,7 +79,7 @@ try:
 
   if dic.lower() == 'y':
     _file.close()
-  toc = time.clock()
+  toc = time.time()
   ttn = toc - tic
 
   print('Done! in {} seconds. With {} total hashes'.format(str(ttn), str(lines)))
