@@ -15,16 +15,16 @@ try:
   maxlen = int(input('Max String Length: ')) + 1
   print('---------------------------------------------------')
 
-  chr_1 = '1): ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklnmopqrstuvwxyz1234567890'
-  chr_2 = '2): abcdefghijklnmopqrstuvwxyz1234567890'
-  chr_3 = '3): ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890'
-  chr_4 = '4): 1234567890'
-  chr_5 = '5): ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklnmopqrstuvwxyz'
-  chr_6 = '6): ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-  chr_7 = '7): abcdefghijklnmopqrstuvwxyz'
-  chr_8 = '8): Custom'
-
-  print(chr_1 + '\n' + chr_2 + '\n' + chr_3 + '\n' + chr_4 + '\n' + chr_5 + '\n' + chr_6 + '\n' + chr_7 + '\n' + chr_8 + '\n')
+  chr = '''1): ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklnmopqrstuvwxyz1234567890
+2): abcdefghijklnmopqrstuvwxyz1234567890
+3): ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890
+4): 1234567890
+5): ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklnmopqrstuvwxyz
+6): ABCDEFGHIJKLMNOPQRSTUVWXYZ
+7): abcdefghijklnmopqrstuvwxyz
+8): Custom'''
+		
+  print(chr)
   print('---------------------------------------------------')
   char_num = int(input('Enter chars option number: '))
 
