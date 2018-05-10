@@ -4,7 +4,6 @@ from itertools import product
 import hashlib
 import time
 
-
 def computeMD5hash(string):
   m = hashlib.md5()
   m.update(string.encode('utf-8'))
@@ -47,14 +46,14 @@ try:
     chars = input('Insert your custom list of chars: ')
 
   dic = input('Save dictionary (Y/N): ')
-  if dic == 'Y' or dic == 'y':
+  if dic.lower() == 'y':
     name = input('Enter destination file name without extension: ') + '.txt'
 
   stop = 0
   found = 0
   lines = 0
 
-  if dic == 'Y' or dic == 'y':
+  if dic.lower() == 'y':
     _file = open(name, 'w')
 
   tic = time.clock()
@@ -64,28 +63,28 @@ try:
     for attempt in to_attempt:
       crypt = computeMD5hash(''.join(attempt))
       if crypt == md5hash:
-        print('[CRACKED!] ' + crypt + ' = ' + ''.join(attempt) + '\n')
+        print('[CRACKED] {} = {}\n'.format(crypt, ''.join(attempt)))
         if dic == 'Y' or dic == 'y':
-          _file.write('[CRACKED!] ' + crypt + ' = ' + ''.join(attempt) + '\n')
+          _file.write('[CRACKED] {} = {}\n'.format(crypt, ''.join(attempt)))
         stop = 1
         found = 1
         break
       else:
-        if dic == 'Y' or dic == 'y':
-          _file.write(crypt + ' = ' + ''.join(attempt) + '\n')
-        print(''.join(attempt) + ' - ' + crypt + '')
+        if dic.lower() == 'y':
+          _file.write('{} = {}\n'.format(crypt, ''.join(attempt)))
+        print('{} - {}'.format(''.join(attempt), crypt))
         lines += 1
     if stop == 1:
       break
 
-  if dic == 'Y' or dic == 'y':
+  if dic.lower() == 'y':
     _file.close()
   toc = time.clock()
   ttn = toc - tic
 
-  print('Done! in ' + str(ttn) + ' seconds. With ' + str(lines) + ' total hashes.')
+  print('Done! in {} seconds. With {} total hashes'.format(str(ttn), str(lines)))
   if found == 0:
     print('Hash not Cracked :(')
   print('---------------------------------------------------')
 except KeyboardInterrupt:
-  print('\n' + 'Stopped at line: ' + str(lines) + ' Chars: ' + str(chars))
+  print('\n Stopped at line: {}'.format(str(lines)))
